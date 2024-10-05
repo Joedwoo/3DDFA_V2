@@ -1,3 +1,8 @@
+!sed -i '1i# cython: language_level=3' FaceBoxes/utils/nms/cpu_nms.pyx
+
+# Ajouter la définition pour désactiver l'API dépréciée de NumPy
+!sed -i '2i# define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION' FaceBoxes/utils/nms/cpu_nms.pyx
+
 # --------------------------------------------------------
 # Fast R-CNN
 # Copyright (c) 2015 Microsoft
