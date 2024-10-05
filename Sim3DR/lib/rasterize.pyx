@@ -1,3 +1,10 @@
+# cython: language_level=3
+
+cdef extern from "*":
+    """
+    #define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION
+    """
+
 import numpy as np
 cimport numpy as np
 # from libcpp.string cimport string
@@ -8,6 +15,7 @@ from libcpp cimport bool
 
 # use the Numpy-C-API from Cython
 np.import_array()
+
 
 # cdefine the signature of our c function
 cdef extern from "rasterize.h":
